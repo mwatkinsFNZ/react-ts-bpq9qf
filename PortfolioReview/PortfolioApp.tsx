@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { FC } from 'react';
 import { ChangeAppType } from '../Dock/ChangeApp';
+import { Path } from '../Dock/Types';
 
-export const PortfoliosApp: FC<{ changeApp: ChangeAppType }> = ({
+export const PortfoliosApp: FC<{ changeApp: ChangeAppType; path: Path }> = ({
   changeApp,
 }) => {
   const localStorage = JSON.stringify(window.localStorage);

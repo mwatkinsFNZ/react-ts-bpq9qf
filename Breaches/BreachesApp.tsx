@@ -2,8 +2,9 @@ import * as React from 'react';
 import { FC, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { ChangeAppType } from '../Dock/ChangeApp';
+import { Path } from '../Dock/Types';
 
-export const BreachesApp: FC<{ changeApp: ChangeAppType }> = ({
+export const BreachesApp: FC<{ changeApp: ChangeAppType, path: Path }> = ({
   changeApp,
 }) => {
   const history = useHistory();
