@@ -5,13 +5,15 @@ import {
   Dispatch,
   SetStateAction,
   useContext,
+  useEffect,
   useState,
 } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Routes from '../Dock/Routes';
+import { Path } from '../Dock/Types';
 
 export type IAppStateContext = {
-  state: string;
+  state: Path;
   setState: Dispatch<SetStateAction<string>>;
 };
 
@@ -31,7 +33,11 @@ export const useAppStateContext = (
 };
 
 export default function DockApp() {
-  const [state, setState] = useState<string | undefined>(undefined);
+  const [state, setState] = useState<Path | undefined>(undefined);
+
+  useEffect(() => {
+    window.localStorage.clear();
+  }, []);
 
   return (
     <div>
